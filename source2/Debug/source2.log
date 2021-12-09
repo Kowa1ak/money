@@ -1,4 +1,1 @@
-﻿  money.cpp
-C:\Danik\laba\source2\source2\money.cpp(108,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Danik\laba\source2\source2\money.cpp(109,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-  source2.vcxproj -> C:\Danik\laba\source2\Debug\source2.exe
+﻿  source2.vcxproj -> C:\Danik\laba\money\Debug\source2.exe

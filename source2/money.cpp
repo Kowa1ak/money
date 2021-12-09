@@ -126,7 +126,7 @@ bool Money::operator == (const Money& p) const
 	if (!PositiveAmount) {
 		tempSum1 *= -1;
 	}
-	if (!p.PositiveAmount) {
+	if (!p.getPositiveAmount()) {
 		tempSum2 *= -1;
 	}
 	return (tempSum1 == tempSum2);
@@ -163,7 +163,7 @@ bool Money::operator>(const Money& p) const
 	tempSum2 = p.getSum();
 	if (!PositiveAmount)
 		tempSum1 *= -1;
-	if (!p.PositiveAmount)
+	if (!p.getPositiveAmount())
 		tempSum2 *= -1;
 	return (tempSum1 > tempSum2);
 }
@@ -181,11 +181,11 @@ bool Money:: operator<(const Money& p) const
 
 ostream& operator << (ostream& s, const Money& p)
 {
-	if (!p.PositiveAmount)
-		if (!(p.P == 0 && p.pd == 0 && p.sh == 0)) s << "-";
-	if (p.pd != 0) s << p.pd << "pd.";
-	if (p.sh != 0) s << p.sh << "sh.";
-	if (p.P != 0) s << p.P << "p.";
-	if (p.P == 0 && p.pd == 0 && p.sh == 0) s << "0p.";
+	if (!p.getPositiveAmount())
+		if (!(p.getP() == 0 && p.getPd() == 0 && p.getSh() == 0)) s << "-";
+	if (p.getPd() != 0) s << p.getPd() << "pd.";
+	if (p.getSh() != 0) s << p.getSh() << "sh.";
+	if (p.getP() != 0) s << p.getP() << "p.";
+	if (p.getP() == 0 && p.getPd() == 0 && p.getSh() == 0) s << "0p.";
 	return s;
 }
