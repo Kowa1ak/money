@@ -97,7 +97,7 @@ Money Money:: operator+(const Money& a) const
 	if (!PositiveAmount) {
 		sum1 *= -1;
 	}
-	if (!a.PositiveAmount) {
+	if (!a.getPositiveAmount()) {
 		sum2 *= -1;
 	}
 	double tempRes = sum1 + sum2;
